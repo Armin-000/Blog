@@ -1,0 +1,2 @@
+# Blog
+Moj prvi projekt
