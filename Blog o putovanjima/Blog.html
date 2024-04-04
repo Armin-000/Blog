@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog o Putovanjima</title>
+    <link rel="stylesheet" href="CSS.css">
+    <!-- Uklonjen interni stil -->
+</head>  
+<body>
+    <!-- Navigacijska traka -->
+    <header>
+        <div class="nav-container">
+            <img src="c:\Users\Armin\Desktop\Armin\Adricom\Globus-Tours-Logo4.png" alt="Logo" id="logo">
+            <nav>
+                <ul>
+                    <li><a href="#destinacije" class="destinacije">Destinacije</a></li>
+                    <li><a href="savjeti.html" class="savjeti">Savjeti za putovanja</a></li>
+                    <li><a href="galerija.html" class="galerija">Galerija</a></li>
+                    <li><a href="#" class="kontakt" onclick="toggleContactInfo()">Kontakt</a></li>
+                </ul>
+            </nav>
+            
+        </div>
+    </header>
+
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+    
+    
+
+    <!-- Plutajući prozor s kontakt informacijama -->
+    <div id="floatingContactInfo" class="floating-contact-info">
+        <p>Email: armin.lisic000@gmail.com</p>
+        <p>Telefon: 099-336-2341</p>
+    </div>
+
+
+
+
+
+
+<!-- 2 sekcija u kojoj se nalaze sadrzaji i opisi -->
+
+
+<div class="section">
+    <div class="row">
+        <div class="column_1">
+            <div id="sadrzajWrapper1" class="sadrzajWrapper">
+                <!-- Sadrzaj za Pariz -->
+                <div class="destinacija1 obrnuti-redoslijed column">
+                    <div class="opis">
+                        <h2>Pariz, Francuska</h2>
+                        <p>Pariz, poznat kao grad svjetlosti i romantike, jedna je od najpoznatijih svjetskih destinacija. Smješten na obalama rijeke Seine, Pariz očarava svoje posjetitelje svojom prepoznatljivom arhitekturom, umjetnošću i kulturom. Grad nudi nevjerojatnu raznolikost znamenitosti, uključujući ikonične zgrade poput Eiffelovog tornja i katedrale Notre-Dame, te renomirane muzeje kao što je Louvre sa svojom izvanrednom umjetničkom zbirkom.</p>
+                    </div>
+                </div>
+                <img src="https://www.adiva.hr/wp-content/uploads/2020/02/Pariz-putovanja.jpg" alt="Slika destinacije Pariz">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="section">
+    <div class="row">
+        <div class="column_2">
+            <div id="sadrzajWrapper2" class="sadrzajWrapper">
+                <!-- Sadrzaj za Barcelona -->
+                <div class="destinacija2 column">
+                    <img src="https://media.tacdn.com/media/attractions-content--1x-1/10/7b/e2/3f.jpg" alt="Slika destinacije Barcelona">
+                    <div class="opis">
+                        <h2>Barcelona, Španjolska</h2>
+                        <p>Barcelona, živopisni grad na obali Sredozemnog mora, poznat je po svojoj jedinstvenoj arhitekturi, kulturi i mediteranskom šarmu. Grad odiše vitalnošću i nudi nevjerojatan spoj povijesnih znamenitosti, umjetničkih remek-djela, fantastične hrane i živahne atmosfere koja privlači ljude iz cijelog svijeta. Barcelona je dom nekih od najpoznatijih građevina Antonija Gaudija, uključujući Sagrada Familiju i Park Güell, te nudi bogatu povijest, šarene uličice i prekrasne plaže.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Auto -->
+
+    <div class="header">
+        <div class="car"></div>
+    </div>
+    
+
+    
+<!-- Za ikonicu pitanja koja se nalazi u 3 sekciji -->
+
+    <div class="question-wrapper">
+        <div class="question-icon-container">
+            <svg class="question-icon w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.529 9.988a2.502 2.502 0 1 1 5 .191A2.441 2.441 0 0 1 12 12.582V14m-.01 3.008H12M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
+            </svg>
+        </div>
+        <p class="question-text"></p>
+    </div>
+    
+
+
+
+
+
+<!-- 3 sekcija na kojima se nalazi elementi -->
+
+    <!-- Dodajte sekciju "collapse" s odgovarajućim sadržajem i gumbom -->
+    <div id="collapse-container">
+        
+    <div id="collapse" class="section">
+        <button class="collapse-button" onclick="toggleCollapse('answer1')">Koje su najpopularnije destinacije za solo putovanja?</button>
+        <div id="answer1" class="collapse-answer">
+            Bali, Tajland, Japan, Portugal, Island, Novi Zeland, Kostarika, Španjolska.
+        </div>
+
+        <button class="collapse-button" onclick="toggleCollapse('answer2')">Kako planirati putovanje s ograničenim budžetom?</button>
+        <div id="answer2" class="collapse-answer">
+            Postavite budžet, putujte izvan sezone, koristite karte niskotarifnih aviokompanija, koristite smještajne opcije poput hostela, Airbnb-a ili couchsurfinga, jedite lokalnu hranu.
+        </div>
+    
+        <button class="collapse-button" onclick="toggleCollapse('answer3')">Koji su najbolji načini istraživanja lokalne kulture na putovanju?</button>
+        <div id="answer3" class="collapse-answer">
+            Sudjelovanje u lokalnim festivalima, kušanje lokalne hrane, posjet muzejima i povijesnim znamenitostima, razgovor s lokalnim stanovništvom, pohađanje tečajeva jezika ili kulturnih radionica.
+        </div>
+    
+        <button class="collapse-button" onclick="toggleCollapse('answer4')">Kako izbjeći turističke zamke i otkriti skrivene dragulje destinacije?</button>
+        <div id="answer4" class="collapse-answer">
+            Istražite manje poznate četvrti, pitajte lokalno stanovništvo za preporuke, koristite alternativne vodiče, istražite manje popularne atrakcije, istražite off-season putovanja.
+        </div>
+    
+        <button class="collapse-button" onclick="toggleCollapse('answer5')">Kako putovati odgovorno i ekološki osviješteno?</button>
+        <div id="answer5" class="collapse-answer">
+            Koristite javni prijevoz, izbjegavajte jednokratnu plastiku, podržavajte lokalne ekološke inicijative, ostavite prirodu netaknutom, birajte smještaj koji primjenjuje održive prakse.
+        </div>
+    
+        <button class="collapse-button" onclick="toggleCollapse('answer6')">Koji su najbolji savjeti za sigurno putovanje?</button>
+        <div id="answer6" class="collapse-answer">
+            Prilagodite se lokalnoj kulturi, držite se sigurnih područja, ne pokazujte vrijedne predmete, kopirajte važne dokumente, pratite upute lokalnih vlasti.
+        </div>
+    
+        <button class="collapse-button" onclick="toggleCollapse('answer7')">Kako dokumentirati putovanje i podijeliti svoje priče s drugima?</button>
+        <div id="answer7" class="collapse-answer">
+            Fotografirajte i snimajte videozapise, pišite dnevnik ili blog, koristite društvene medije za dijeljenje iskustava, stvarajte foto albume ili video montaže.
+        </div>
+    
+        <button class="collapse-button" onclick="toggleCollapse('answer8')">Kako mogu najbolje isplanirati svoje putovanje kako bih iskoristio vrijeme i resurse na najbolji način?</button>
+        <div id="answer8" class="collapse-answer">
+            Napravite detaljan itinerar, istražite prijevozne opcije unaprijed, rezervirajte smještaj i ulaznice unaprijed, planirajte slobodno vrijeme, koristite digitalne alate, budite fleksibilni.
+        </div>
+    </div>
+    
+    
+
+<!-- Da bi se prikazali odgovori kad kliknemo na elemente -->
+    <script>
+        function toggleCollapse(sectionId) {
+            var answer = document.getElementById(sectionId);
+            if (answer.style.display === "block") {
+                answer.style.display = "none";
+            } else {
+                answer.style.display = "block";
+            }
+        }
+    </script>
+    
+
+
+
+
+<!-- Gumb koji vraca korisnika na pocetnu stranicu -->
+
+<button onclick="scrollToTop()" id="scrollToTopBtn" title="Vrati se na početak">
+    <svg class="w-8 h-8 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="50" height="70" fill="currentColor" viewBox="0 0 24 24">
+      <path fill-rule="evenodd" d="M5.575 13.729C4.501 15.033 5.43 17 7.12 17h9.762c1.69 0 2.618-1.967 1.544-3.271l-4.881-5.927a2 2 0 0 0-3.088 0l-4.88 5.927Z" clip-rule="evenodd"/>
+    </svg>
+  </button>
+  
+  
+
+
+
+<!-- Footer koji se nalazi na dnu stranice i linkovi -->
+
+<footer>
+    <div class="footer-content">
+        <h2>Contact Information</h2>
+        <ul>
+            <li>Company Name: Erthert company</li>
+            <li>Phone: 099-336-2341</li>
+            <li>Email: armin.lisic000@gmail.com</li>
+        </ul>
+    </div>
+    <div class="footer-links">
+        <a href="https://www.facebook.com/public/Armin-Lisic" target="_blank"><img src="https://static.vecteezy.com/system/resources/previews/018/930/698/original/facebook-logo-facebook-icon-transparent-free-png.png" alt="Facebook" class="tremor"></a>
+        <a href="https://www.instagram.com/arminlisic/" target="_blank"><img src="https://cdn.pixabay.com/photo/2020/11/15/06/18/instagram-logo-5744708_1280.png" alt="Instagram" class="tremor"></a>
+        <a href="https://twitter.com/your_twitter_page_link" target="_blank"><img src="https://seeklogo.com/images/T/twitter-logo-1DEF94C339-seeklogo.com.png" alt="Twitter" class="tremor"></a>
+    </div>
+</footer>
+
+
+
+<!-- Povezivanje s javom -->
+
+    <script src="script.js"></script>
+    
+    
+</body>
+</html>

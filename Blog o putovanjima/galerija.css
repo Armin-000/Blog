@@ -1,0 +1,46 @@
+body {
+  background-color: black; /* Postavite crnu boju pozadine cijele stranice */
+  margin: 0; /* Postavite margin na 0 kako bi uklonili defaultni margin */
+}
+
+.gallery {
+  display: flex;
+  justify-content: center; /* Centrirajte galeriju horizontalno */
+  align-items: center; /* Centrirajte galeriju vertikalno */
+  height: 100vh; /* Postavite visinu galerije na visinu prozora */
+}
+
+.gallery .image-container {
+  margin: 5px 55px; /* Smanjite margin na 20px vertikalno i 10px horizontalno */
+  position: relative; 
+  width: 500px; /* Postavite željenu širinu kontejnera slike */
+  height: 500px; /* Postavite željenu visinu kontejnera slike */
+}
+
+.gallery .image-container img {
+  width: 100%; /* Postavite širinu slike na 100% kontejnera */
+  height: auto; /* Automatski prilagodite visinu slike */
+  transition: transform 0.3s ease; /* Dodajte prijelaz za glatki efekt */
+}
+
+.gallery .image-container:hover img {
+  transform: scale(1.1); /* Povećajte sliku za 10% kada se pređe mišem preko nje */
+}
+
+.image-description {
+  position: absolute;
+  bottom: -50px; /* Postavite opis ispod slike (podesite prema potrebi) */
+  transform: translateX(-50%); /* Centrirajte opis u odnosu na kontejner slike */
+  width: calc(100% - 20px); /* Postavite širinu opisa */
+  background-color: rgba(0, 0, 0, 0.5); /* Postavite polu-transparentnu crnu pozadinu */
+  color: white; /* Postavite bijelu boju teksta opisa */
+  padding: 10px; /* Dodajte razmak unutar opisa */
+  box-sizing: border-box; /* Uključite padding u širinu */
+  opacity: 0; /* Početno sakrijte opis */
+}
+
+.gallery .image-container:hover .image-description {
+  opacity: 1; /* Prikažite opis kada se pređe mišem preko slike */
+  bottom: 120px; /* Prikazati opis na px ispod slike */
+  left: 400px;
+}

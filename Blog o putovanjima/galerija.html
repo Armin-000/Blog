@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Futuristička Galerija</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
+<link rel="stylesheet" href="galerija.css">
+<style>
+
+
+.gallery {
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 10px; /* Postavite željeni razmak između redaka */
+}
+
+  .gallery img {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    margin: 0 auto; 
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+  #backToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: none;
+  }
+  #backToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #ff6f61;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    box-shadow: 0px 2px 5px rgba(247, 0, 0, 0.2);
+  }
+  #backToTop:hover {
+    background-color: #1a100f;
+  }
+  #backToTop::before {
+    content: '';
+    margin-right: 5px;
+  }
+
+
+</style>
+</head>
+
+
+
+
+
+
+
+
+<body>
+
+
+  <div class="gallery">
+    <a href="https://www.adriaticluxuryvillas.com/uploads/images/the-most-beautiful-lakes-in-croatia-1683540241509.jpg" data-lightbox="gallery" data-title="Predivni vodopad u srcu prirode">
+      <div class="image-container">
+        <img src="https://www.adriaticluxuryvillas.com/uploads/images/the-most-beautiful-lakes-in-croatia-1683540241509.jpg" alt="Slika 1">
+        <figcaption class="image-description">Predivni vodopad u srcu prirode</figcaption>
+      </div>
+    </a>
+
+
+    <a href="https://zastita-prirode.hr/wp-content/uploads/2022/01/priroda.jpg" data-lightbox="gallery" data-title="Predivni krajolik Gorskog Kotara">
+      <div class="image-container">
+        <img src="https://zastita-prirode.hr/wp-content/uploads/2022/01/priroda.jpg" alt="Slika 2">
+        <figcaption class="image-description">Predivni krajolik Gorskog Kotara</figcaption>
+      </div>
+    </a>
+    
+
+    <a href="https://img.goodfon.com/original/1920x1200/6/ac/les-tuman-priroda-2.jpg" data-lightbox="gallery" data-title="Maglovit put prema srcu šume">
+      <div class="image-container">
+        <img src="https://img.goodfon.com/original/1920x1200/6/ac/les-tuman-priroda-2.jpg" alt="Slika 3">
+        <figcaption class="image-description">Maglovit put prema srcu šume</figcaption>
+      </div>
+    </a>
+    
+
+    <a href="https://img.goodfon.com/original/1920x1200/5/e2/doroga-gora-priroda-utro.jpg" data-lightbox="gallery" data-title="Spoj modernog i prirodnog dijela">
+      <div class="image-container">
+        <img src="https://img.goodfon.com/original/1920x1200/5/e2/doroga-gora-priroda-utro.jpg" alt="Slika 4">
+        <figcaption class="image-description">Spoj modernog i prirodnog dijela</figcaption>
+      </div>
+    </a>
+    
+
+    <a href="https://img.goodfon.com/original/1920x1200/f/38/priroda-pole-lavanda-derevo-tsvety-oblaka-nebo.jpg" data-lightbox="gallery" data-title="Uzgoj lavande">
+      <div class="image-container">
+        <img src="https://img.goodfon.com/original/1920x1200/f/38/priroda-pole-lavanda-derevo-tsvety-oblaka-nebo.jpg" alt="Slika 5">
+        <figcaption class="image-description">Uzgoj lavande</figcaption>
+      </div>
+    </a>
+
+    
+    <a href="https://pixnio.com/free-images/2017/12/16/2017-12-16-12-11-25.jpg" data-lightbox="gallery" data-title="Jedna od najpoznatijh scena iz Harry Potter-a">
+      <div class="image-container">
+        <img src="https://pixnio.com/free-images/2017/12/16/2017-12-16-12-11-25.jpg" alt="Slika 6">
+        <figcaption class="image-description">Jedna od najpoznatijh scena iz Harry Potter-a</figcaption>
+      </div>
+    </a>
+    
+
+    <a href="https://i0.wp.com/odgovorno.hr/wp-content/uploads/2021/12/Man-Walking-In-Nature.jpg?fit=1920%2C1200&ssl=1" data-lightbox="gallery" data-title="Spoj čovjeka i prirode">
+      <div class="image-container">
+        <img src="https://i0.wp.com/odgovorno.hr/wp-content/uploads/2021/12/Man-Walking-In-Nature.jpg?fit=1920%2C1200&ssl=1" alt="Slika 7">
+        <figcaption class="image-description">Spoj čovjeka i prirode</figcaption>
+      </div>
+    </a>
+
+
+    <a href="https://pozadinezaracunar.weebly.com/uploads/4/8/7/0/48708683/zima.jpg" data-lightbox="gallery" data-title="Priroda i pejzazi">
+      <div class="image-container">
+        <img src="https://pozadinezaracunar.weebly.com/uploads/4/8/7/0/48708683/zima.jpg" alt="Slika 8">
+        <figcaption class="image-description">Priroda i pejzazi</figcaption>
+      </div>
+    </a>
+
+
+    <a href="https://i0.wp.com/loreleiwebdesign.com/wp-content/uploads/2010/02/829932-hdr-wallpaper-1-1.jpg" data-lightbox="gallery" data-title="Nacionalni park">
+      <div class="image-container">
+        <img src="https://i0.wp.com/loreleiwebdesign.com/wp-content/uploads/2010/02/829932-hdr-wallpaper-1-1.jpg" alt="Slika 8">
+        <figcaption class="image-description">Nacionalni park</figcaption>
+      </div>
+    </a>
+
+
+    <a href="https://www.desktopbackground.org/download/o/2015/07/22/983322_wallpapers-nature-technology-hd-free-spot-malaysia-1920x1200_1920x1200_h.jpg" data-lightbox="gallery" data-title="Posebni krajolici">
+      <div class="image-container">
+        <img src="https://www.desktopbackground.org/download/o/2015/07/22/983322_wallpapers-nature-technology-hd-free-spot-malaysia-1920x1200_1920x1200_h.jpg" alt="Slika 9">
+        <figcaption class="image-description">Posebni krajolici</figcaption>
+      </div>
+    </a>
+
+
+    <a href="https://i.pinimg.com/originals/00/03/4c/00034c56ab7e1d2c8b7a0f48f0999f38.jpg" data-lightbox="gallery" data-title="Dolazak proljeća">
+      <div class="image-container">
+        <img src="https://i.pinimg.com/originals/00/03/4c/00034c56ab7e1d2c8b7a0f48f0999f38.jpg" alt="Slika 10">
+        <figcaption class="image-description">Dolazak proljeća</figcaption>
+      </div>
+    </a>
+
+
+    <a href="https://wallpapersmug.com/download/1920x1200/a7546e/night-mountains-stars-sky.jpg" data-lightbox="gallery" data-title="Pogled na zvijezde">
+      <div class="image-container">
+        <img src="https://wallpapersmug.com/download/1920x1200/a7546e/night-mountains-stars-sky.jpg" alt="Slika 10">
+        <figcaption class="image-description">Pogled na zvijezde</figcaption>
+      </div>
+    </a>
+
+
+    <a href="https://i.pinimg.com/originals/3e/a8/1e/3ea81e1764a39198ca88bca3a99193e9.jpg" data-lightbox="gallery" data-title="Netaknuta priroda">
+      <div class="image-container">
+        <img src="https://i.pinimg.com/originals/3e/a8/1e/3ea81e1764a39198ca88bca3a99193e9.jpg" alt="Slika 11">
+        <figcaption class="image-description">Netaknuta priroda</figcaption>
+      </div>
+    </a>
+
+
+    <a href="https://wallpapersmug.com/download/1920x1200/ba8e68/clean-lake-mountains-range-trees-nature-4k.jpg" data-lightbox="gallery" data-title="Svicarska">
+      <div class="image-container">
+        <img src="https://wallpapersmug.com/download/1920x1200/ba8e68/clean-lake-mountains-range-trees-nature-4k.jpg" alt="Slika 12">
+        <figcaption class="image-description">Svicarska</figcaption>
+      </div>
+    </a>
+
+
+    <a href="https://wallpapersmug.com/download/1920x1200/ba8e68/clean-lake-mountains-range-trees-nature-4k.jpg" data-lightbox="gallery" data-title="Svicarska">
+      <div class="image-container">
+        <img src="https://wallpapersmug.com/download/1920x1200/ba8e68/clean-lake-mountains-range-trees-nature-4k.jpg" alt="Slika 13">
+        <figcaption class="image-description">Svicarska</figcaption>
+      </div>
+    </a>
+
+
+    <a href="https://i.pinimg.com/originals/8d/90/e0/8d90e0a153f20e0145778a8c698c1d69.jpg" data-lightbox="gallery" data-title="Irska">
+      <div class="image-container">
+        <img src="https://i.pinimg.com/originals/8d/90/e0/8d90e0a153f20e0145778a8c698c1d69.jpg" alt="Slika 14">
+        <figcaption class="image-description">Irska</figcaption>
+      </div>
+    </a>
+
+
+    <a href="https://wallpapercave.com/wp/wp3464087.jpg" data-lightbox="gallery" data-title="Finska">
+      <div class="image-container">
+        <img src="https://wallpapercave.com/wp/wp3464087.jpg" alt="Slika 15">
+        <figcaption class="image-description">Finska</figcaption>
+      </div>
+    </a>
+
+
+    <a href="https://wallpapersmug.com/download/1920x1200/0a807b/blur-field-plants-nature.jpg" data-lightbox="gallery" data-title="Polje">
+      <div class="image-container">
+        <img src="https://wallpapersmug.com/download/1920x1200/0a807b/blur-field-plants-nature.jpg" alt="Slika 16">
+        <figcaption class="image-description">Polje</figcaption>
+      </div>
+    </a>
+
+    
+<button id="backToTop" onclick="goToTop()">Povratak na vrh</button>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+<script>
+
+
+
+  var gallery = document.querySelector('.gallery');
+  var msnry = new Masonry( gallery, {
+    itemSelector: '.image-container',
+    columnWidth: '.image-container',
+    gutter: 20
+  });
+
+
+  
+  function goToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  window.onscroll = function() {scrollFunction()};
+
+  function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      document.getElementById("backToTop").style.display = "block";
+    } else {
+      document.getElementById("backToTop").style.display = "none";
+    }
+  }
+
+  
+</script>
+
+</body>
+</html>

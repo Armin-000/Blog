@@ -1,0 +1,733 @@
+
+
+
+/* Pozadina */
+
+header {
+    display: flex; /* Pretvara header element u flex kontejner */
+    justify-content: center; /* Poravnava sadržaj horizontalno po sredini */
+    align-items: center; /* Poravnava sadržaj vertikalno po sredini */
+    flex-direction: column; /* Postavlja smjer redaka na vertikalno */
+    background-image: url('https://wallpaperaccess.com/full/1216501.jpg');
+    background-size: cover;
+    background-position: top;
+    padding: 100px 0;
+    text-align: center;
+    z-index: 0;
+    height: 940px;
+    animation: rotateBackground 12s infinite;
+}
+
+@keyframes rotateBackground {
+    0%, 100% {
+        background-image: url('https://wallpaperaccess.com/full/1216501.jpg');
+    }
+    25% {
+        background-image: url('https://images.hdqwalls.com/download/returning-home-in-3840x2160.jpg');
+    }
+    50% {
+        background-image: url('https://free4kwallpapers.com/uploads/originals/2021/07/18/sunset-wallpaper.jpg');
+    }
+    75% {
+        background-image: url('https://wallpaper.dog/large/5556710.jpg');
+    }
+}
+
+
+
+
+
+
+/*Šminkanje navigacijske trake*/
+
+nav {
+    display: flex; /* Pretvara navigacijski element u flex kontejner */
+    justify-content: center; /* Poravnava elemente unutar trake horizontalno po sredini */
+    margin-bottom: 550px; /* Promijenjena vrijednost margine kako bi se vratila traka prema gore */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Pretvara <ul> element u flex kontejner */
+}
+
+nav ul li {
+    position: relative; /* Dodajemo relativni položaj za postavljanje plutajućeg elementa */
+}
+
+nav ul li a {
+    display: block;
+    color: rgb(255, 255, 255); /* Boja teksta */
+    text-align: center;
+    padding: 14px 16px; /* Prostor unutar linkova */
+    text-decoration: none;
+    font-weight: bold; /* Dodajte podebljavanje teksta */
+    font-size: 20px; /* Povećavamo veličinu samo za linkove sa klasom "special" */
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -5px; /* Pomičemo plutajući element prema gore */
+    height: 2px;
+    background-color: blue; /* Promijenite boju prema vašim potrebama */
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+nav ul li:hover a::after {
+    transform: scaleX(1);
+}
+
+
+
+
+
+
+
+
+
+/* Plutajući efekti za svaki element */
+nav ul li .destinacije::after,
+nav ul li .savjeti::after,
+nav ul li .galerija::after,
+nav ul li .kontakt::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -5px; /* Pomičemo plutajući element prema gore */
+    height: 2px;
+    background-color: rgb(255, 255, 255); /* Promijenite boju prema vašim potrebama */
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Dodajemo hover efekt za plutajuću liniju */
+nav ul li:hover .destinacije::after,
+nav ul li:hover .savjeti::after,
+nav ul li:hover .galerija::after,
+nav ul li:hover .kontakt::after {
+    transform: scaleX(1);
+}
+
+
+
+
+
+
+
+
+
+/* Postavljanje Flexboxa na .hidden, .sadrzaj-item i #logo */
+.hidden-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sadrzaj-item {
+    margin-bottom: 20px;
+}
+
+.sadrzaj-item img {
+    max-width: 100%;
+    height: auto;
+}
+
+#logo {
+    width: 100px;
+    height: auto;
+}
+
+
+
+
+
+/* Manipulacija s elementima navigacijske trake */
+.nav-container {
+    display: flex;
+    flex-direction: column; /* Postavljanje vertikalnog rasporeda elemenata */
+    align-items: center;
+}
+
+nav ul {
+    list-style: none; /* Uklanja oznake liste */
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 10px 0;
+}
+
+nav ul li a {
+    padding: 10px;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+/* Ostali stilovi */
+header h1 {
+    font-size: 24px;
+    line-height: 32px;
+}
+
+body {
+    background-size: cover;
+    background-position: center;
+}
+
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column; /* Stavlja linkove u vertikalni raspored na manjim ekranima */
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 5px 0; /* Smanjuje razmak između linkova na manjim ekranima */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Kontakt */
+
+/* Stilizacija plutajućeg prozora s kontakt informacijama */
+.floating-contact-info {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.9); /* Bijela boja s 90% neprozirnosti */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Blaga sjena */
+    transition: background-color 0.5s, box-shadow 0.5s; /* Tranzicija boje pozadine i sjene */
+    z-index: 999; /* Visoki z-index kako bi bio iznad ostalog sadržaja */
+    display: flex; /* Koristimo flexbox */
+    align-items: center; /* Centriranje elemenata u vertikalnom smjeru */
+}
+
+
+.floating-contact-info:hover {
+    background-color: rgba(255, 255, 255, 0.95); /* Lagano povećanje neprozirnosti prilikom hovera */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Pojačanje sjene prilikom hovera */
+}
+
+/* Dodatni stilovi kao što su font, veličina teksta i ostalo */
+.floating-contact-info p {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold; /* Podebljajte tekst */
+    color: #333; /* Tamnosiva boja teksta */
+    margin: 5px 0;
+}
+
+.floating-contact-info img {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+    border-radius: 50%; /* Okrugli oblik za slike */
+}
+
+
+
+
+
+/* 2 sekcija u kojoj se nalaze opis i sadrzaji */
+
+
+
+
+/* CSS za #sadrzajWrapper1 */
+#sadrzajWrapper1 {
+    margin-bottom: 600px; /* Dodajte odmak između sadržaja i footera */
+    margin-top: 100px; /* Prilagodite ovu vrijednost prema vašim potrebama */
+    margin-left: 180px; /* Pomaknite sadržaj 50 piksela lijevo */
+    margin-right: 180px; /* Pomaknite sadržaj 50 piksela desno */
+    border-radius: 20px; /* Postavite radijus zaobljenja na 20 piksela */
+    overflow: hidden; /* Ovo će osigurati da se sadržaj ispravno oblikuje unutar zaobljenih uglova */
+    display: flex; /* Koristi flexbox */
+    flex-direction: row; /* Postavi horizontalni raspored */
+    justify-content: space-between; /* Rasporedi elemente ravnomjerno */
+    align-items: center; /* Centriraj vertikalno */
+}
+
+#sadrzajWrapper1 h2 {
+    text-align: center; /* Centrirajte naslov */
+    margin-top: 50px; /* Dodajte malo prostora iznad naslova */
+}
+
+#sadrzajWrapper1 p {
+    margin-left: 20px; /* Postavite margin s lijeve strane na 20 piksela */
+    margin-right: 50px;
+}
+
+.destinacija1 {
+    display: flex; /* Koristi flexbox za slike i opis */
+    align-items: center; /* Centriraj vertikalno */
+}
+
+.destinacija1 img {
+    width: 35%; /* Postavite širinu slike kao postotak */
+    height: auto;
+    margin: 20px; /* Dodajte margin oko slike */
+    border-radius: 90px;
+    transition: transform 0.3s ease;
+}
+
+.destinacija1 .opis {
+    text-align: left; /* Postavite opis na lijevu stranu */
+    margin-left: 20px; /* Dodajte malo prostora između slike i opisa */
+}
+
+@media only screen and (max-width: 768px) {
+    /* Stilovi koji će se primijeniti samo na ekranima širine do 768px */
+    #sadrzajWrapper1 {
+        flex-direction: column; /* Postavite vertikalni raspored za male ekrane */
+        justify-content: center; /* Centrirajte vertikalno */
+        align-items: center; /* Centrirajte horizontalno */
+    }
+
+    .destinacija1 {
+        flex-direction: column; /* Postavite vertikalni raspored za opis i sliku */
+        align-items: center; /* Centrirajte elemente horizontalno */
+    }
+
+    .destinacija1 img {
+        width: 90%; /* Postavite širinu slike na 90% za punu širinu */
+        margin: 10px auto; /* Postavite margin da bude automatski na sredini */
+    }
+
+    .destinacija1 .opis {
+        text-align: center; /* Centriraj opis */
+        margin-left: 0; /* Ukloni lijevu marginu na opisu */
+        margin-right: 0; /* Ukloni desnu marginu na opisu */
+    }
+}
+
+
+
+
+
+
+
+
+/* CSS za #sadrzajWrapper2 */
+
+
+#sadrzajWrapper2 {
+    margin-bottom: 600px;
+    margin-top: -500px;
+    margin-left: 180px;
+    margin-right: 180px;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#sadrzajWrapper2 h2 {
+    text-align: center;
+    margin-top: -50px;
+}
+
+#sadrzajWrapper2 p {
+    margin-left: 20px;
+    margin-right: 50px;
+}
+
+.destinacija2 {
+    display: flex;
+    align-items: center;
+}
+
+.destinacija2 img {
+    width: 35%;
+    height: auto;
+    margin: 20px;
+    border-radius: 90px;
+    transition: transform 0.3s ease;
+}
+
+.destinacija2 .opis {
+    text-align: left;
+    margin-left: 20px;
+}
+
+@media only screen and (max-width: 768px) {
+    /* Stilovi koji će se primijeniti samo na ekranima širine do 768px */
+    #sadrzajWrapper2 {
+        flex-direction: column; /* Postavite vertikalni raspored za male ekrane */
+        justify-content: flex-start; /* Poravnajte elemente s vrha */
+        align-items: center; /* Poravnajte elemente središnje */
+        margin-left: 20px; /* Smanjite lijevi margin */
+        margin-right: 20px; /* Smanjite desni margin */
+    }
+
+    #sadrzajWrapper2 h2,
+    #sadrzajWrapper2 p {
+        text-align: center; /* Poravnajte tekst s lijeve strane */
+        margin: 5px; /* Prilagodite margin za bolje razmještaj */
+    }
+
+    .destinacija2 {
+        flex-direction: column; /* Postavite vertikalni raspored za opis i sliku */
+        align-items: center; /* Centrirajte elemente horizontalno */
+    }
+
+    .destinacija2 img {
+        width: 25%; /* Postavite širinu slike na 100% za punu širinu */
+        margin: 10px 0; /* Prilagodite margin za bolji razmještaj */
+    }
+    .destinacija2 .opis {
+        white-space: nowrap; /* Onemogućavanje prelamanja teksta */
+        max-width: 200px; /* Maksimalna širina opisa */
+    }
+    
+}
+
+
+
+
+
+
+
+
+/* 3 sekcija "najcesca pitanja" */
+
+#collapse {
+    width: 550px;
+    padding: 100px;
+    position: relative;
+    margin: 0 auto;
+    margin-top: -500px;
+    margin-bottom: 550px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f2f2f2; /* Dodajemo sivu pozadinu */
+}
+
+#collapse::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% + 1500px);
+    height: 100%;
+    background-color: #f2f2f2; /* Dodajemo sivu pozadinu */
+    z-index: -1;
+}
+
+
+.collapse-button {
+    background-color: #4caf50;
+    color: white;
+    padding: 15px 30px;
+    margin: 8px auto;
+    border: 2px solid #4caf50;
+    border-radius: 60px;
+}
+
+.collapse-button:active {
+    background-color: rgb(0, 0, 0);
+}
+
+.collapse-answer {
+    display: none;
+    padding: 10px;
+    margin-top: 3px;
+    border: 1px solid #000000;
+    border-radius: 60px;
+    background-color: #d36323;
+    color: white;
+}
+
+.collapse-answer.active {
+    display: block;
+    max-height: 500px;
+}
+
+/* Prilagodba za manje ekrane */
+@media (max-width: 768px) {
+    #collapse {
+        width: auto; /* Postavite širinu na automatsko kako bi se prilagodilo širini sadržaja */
+        padding: 50px; /* Prilagodite veličinu jaza */
+    }
+
+    .collapse-button {
+        padding: 10px 20px; /* Prilagodite veličinu gumba */
+        font-size: 14px; /* Prilagodite veličinu fonta */
+        margin: 5px auto; /* Prilagodite razmak između gumba */
+    }
+
+    .collapse-answer {
+        padding: 5px; /* Prilagodite veličinu okvira odgovora */
+        margin-top: 2px; /* Prilagodite razmak između odgovora */
+        font-size: 12px; /* Prilagodite veličinu fonta */
+    }
+}
+
+
+
+
+
+
+
+
+/* Ikonica pitanja koja se nalazi iznad elemenata s pitanjima */
+
+.question-icon {
+    width: 50px; /* Podesite širinu ikonice prema potrebi */
+    height: 50px; /* Podesite visinu ikonice prema potrebi */
+}
+
+.question-wrapper {
+    position: relative;
+    display: flex; /* Pretvara kontejner ikonice u fleksibilni kontejner */
+    justify-content: center; /* Poravnava ikonicu horizontalno po sredini */
+}
+
+.question-icon-container {
+    position: absolute;
+    top: -425px; /* Prilagodite ovu vrijednost prema potrebi */
+    left: 50%;
+    transform: translateX(-50%);
+    animation: rotateIcon 2s infinite; /* Postavite trajanje i ponavljanje animacije prema potrebi */
+    z-index: 1; /* Postavljamo z-index kako bi ikonica bila iznad sadržaja */
+}
+
+@keyframes rotateIcon {
+    0% {
+        transform: translateX(-50%) rotate(0deg);
+    }
+    50% {
+        transform: translateX(-50%) rotate(-180deg);
+    }
+    100% {
+        transform: translateX(-50%) rotate(0deg);
+    }
+}
+
+/* Prilagodba za manje ekrane */
+@media (max-width: 768px) {
+    .question-icon {
+        width: 30px; /* Prilagodite širinu ikonice na manjim ekranima */
+        height: 30px; /* Prilagodite visinu ikonice na manjim ekranima */
+    }
+
+    .question-icon-container {
+        top: -455px; /* Prilagodite poziciju ikonice na manjim ekranima */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Stilovi za gumb koji vraća korisnika na početak dijela stranice */
+#scrollToTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 40px;
+    z-index: 99;
+    transition: opacity 0.3s, visibility 0.3s;
+    background-color: transparent; /* Boja pozadine gumba */
+    color: #11c0df; /* Boja ikone gumba */
+    border: none; /* Uklanjanje granice */
+    border-radius: 100%; /* Zaobljeni rubovi */
+    width: 50px; /* Širina gumba */
+    height: 50px; /* Visina gumba */
+    font-size: 24px; /* Veličina ikone */
+    bottom: 130px; /* Rastojanje od dna stranice */
+}
+
+#scrollToTopBtn:active {
+    transform: scale(0.9); /* Smanjivanje veličine gumba za 10% prilikom pritiska */
+}
+
+/* Funkcija koja spriječava da bude razmak margina */
+body {
+    margin: 0; /* Uklanja marginu oko tela stranice */
+    padding: 0; /* Uklanja padding oko tela stranice */
+    overflow-x: hidden;
+}
+
+
+
+
+
+
+
+
+/* Footer koji se nalazi na dnu stranice */
+body {
+    display: grid;
+    grid-template-rows: auto 1fr auto; 
+    min-height: 100vh;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-top: -550px; /* Prilagodite vrijednost margine prema vašim potrebama */
+    display: flex; /* Koristite flexbox za raspoređivanje elemenata */
+    flex-direction: column; /* Postavite da se elementi slažu jedan ispod drugog */
+    justify-content: space-between; /* Postavite da se elementi rašire na dnu */
+    align-items: center; /* Centrirajte elemente po vertikali */
+}
+
+/* Tekst u sredini footera */
+.footer-content {
+    margin-bottom: 20px; /* Dodajte razmak ispod teksta */
+}
+
+.footer-links {
+    margin-left: auto; /* Postavite margin na lijevu stranu na auto kako bi ikonice ostale desno */
+    margin-top: -80px;
+}
+
+.footer-links a {
+    color: white;
+    margin-left: 10px;
+}
+
+.footer-links a img {
+    width: 50px; /* Postavite željenu širinu */
+    height: 50px; /* Postavite željenu visinu */
+}
+
+.tremor {
+    margin: 0 10px; /* Dodajte razmak između ikonica */
+    width: 30px; /* Prilagodite veličinu ikonica po potrebi */
+    height: 30px;
+    animation: moveIcons 4s linear infinite; /* Pokrenite animaciju za pomicanje ikonica */
+}
+
+@keyframes moveIcons {
+    0% {
+        transform: translateX(0); /* Početna pozicija */
+    }
+    50% {
+        transform: translateX(20px); /* Kretanje udesno */
+    }
+    100% {
+        transform: translateX(0); /* Vraćanje na početnu poziciju */
+    }
+}
+
+/* Media query za manje ekrane */
+@media (max-width: 768px) {
+    footer {
+        font-size: 0.8em; /* Smanjite veličinu teksta */
+        flex-direction: column; /* Postavite da se elementi slažu jedan ispod drugog */
+    }
+
+    .footer-links {
+        margin-top: 20px; /* Prilagodite margin-top */
+        display: flex;
+        justify-content: center; /* Centrirajte ikonice */
+    }
+
+    .footer-links a {
+        margin: 5px; /* Smanjite margin između ikonica na manjim ekranima */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/* poziciranje i namjestavanje autica na vrhu trece sekcije */
+.header {
+    height: 100px; /* Prilagodite visinu po potrebi */
+    position: relative; /* Omogućava nam da pozicioniramo automobil unutar zaglavlja */
+    display: flex; /* Koristimo flexbox za prilagodbu na manjim ekranima */
+    justify-content: center; /* Centriramo sadržaj po horizontalnoj osi */
+    align-items: center; /* Centriramo sadržaj po vertikalnoj osi */
+}
+
+.car {
+    width: 100px; /* Prilagodite veličinu automobila po potrebi */
+    height: 50px;
+    background-image: url('suv-car-icon.svg'); /* Postavite putanju do vaše SVG datoteke */
+    background-size: contain; /* Postavite veličinu pozadine tako da se automobil sadrži unutar elementa */
+    position: absolute; /* Pozicioniramo automobil unutar zaglavlja */
+    top: -393%; /* Postavljamo automobil na sredinu visine zaglavlja */
+    left: 50%; /* Postavljamo automobil na sredinu širine zaglavlja */
+    transform: translate(-50%, -50%); /* Centriramo automobil horizontalno i vertikalno */
+    animation: moveCar 5s linear infinite; /* Pokrećemo animaciju za automobil */
+}
+
+@keyframes moveCar {
+    0% {
+        left: calc(100% + 100px); /* Početna pozicija automobila (izvan desne granice zaglavlja) */
+    }
+    100% {
+        left: -100px; /* Krajnja pozicija automobila (izvan lijeve granice zaglavlja) */
+    }
+}
+
+
+
+
+
+@media (max-width: 768px) {
+    .header {
+        height: auto;
+        flex-direction: column;
+        justify-content: center; /* Dodajte ovu liniju kako biste centrirali sadržaj vertikalno */
+        align-items: center; /* Dodajte ovu liniju kako biste centrirali sadržaj horizontalno */
+    }
+
+    .car {
+        margin-bottom: 20px;
+        position: static; /* Promijenite pozicioniranje na static */
+        transform: none; /* Resetirajte transformaciju */
+    }
+}
+
+
+
+
